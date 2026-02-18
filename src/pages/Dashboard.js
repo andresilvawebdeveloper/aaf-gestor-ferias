@@ -7,7 +7,7 @@ import { useVacationCalc } from '../hooks/useVacationCalc';
 
 // Importação do novo Modal e do seu Logo
 import VacationModal from '../components/VacationModal';
-import LogoEmpresa from '../assets/logo-cliente.png'; 
+import LogoEmpresa from '../assets/logoAAFapp.jpg'; 
 
 const Dashboard = () => {
   const [employees, setEmployees] = useState([]);
@@ -55,7 +55,7 @@ const Dashboard = () => {
       {/* Sidebar lateral */}
       <aside className="w-72 bg-white shadow-xl flex flex-col">
         <div className="p-8 border-b flex justify-center bg-white">
-          <img src={LogoEmpresa} alt="Logo" className="h-14 w-auto object-contain" />
+          <img src={LogoEmpresa} alt="Logo AAF" className="h-14 w-auto object-contain" />
         </div>
         
         <div className="p-6 overflow-y-auto">

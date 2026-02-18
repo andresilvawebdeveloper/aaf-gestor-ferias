@@ -1,6 +1,6 @@
 import React from 'react';
 import { useVacationCalc } from '../hooks/useVacationCalc';
-import LogoEmpresa from '../assets/logo-cliente.png'; // Mantendo a consistência da marca
+import LogoEmpresa from '../assets/logoAAFapp.jpg'; // Mantendo a consistência da marca
 
 const EmployeeDetail = ({ employee, vacations }) => {
   const { calculateWorkDays, isPastVacation } = useVacationCalc();
