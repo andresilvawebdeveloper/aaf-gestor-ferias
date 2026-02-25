@@ -101,3 +101,36 @@ export const vacationProvider = {
         return { success: true };
     }
 };
+// Adicione isto ao seu api.js atual
+export const absenceProvider = {
+    getAll: async () => {
+        const { data, error } = await supabase.from('absences').select('*');
+        if (error) throw error;
+        return { data };
+    },
+    create: async (absence) => {
+        const { data, error } = await supabase.from('absences').insert([absence]).select();
+        if (error) throw error;
+        return { data: data[0] };
+    },
+    delete: async (id) => {
+        const { error } = await supabase.from('absences').delete().eq('id', id);
+        if (error) throw error;
+    }
+};
+// Adicione esta função dentro do objeto employeeProvider no seu api.js
+update: async (id, updatedData) => {
+    const { data, error } = await supabase
+        .from('employees')
+        .update({
+            name: updatedData.name,
+            role: updatedData.role,
+            totaldays: parseInt(updatedData.totaldays),
+            color: updatedData.color
+        })
+        .eq('id', id)
+        .select();
+    
+    if (error) throw error;
+    return { data: data[0] };
+}
